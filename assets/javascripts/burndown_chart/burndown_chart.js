@@ -1,5 +1,5 @@
 function renderChart(canvas_id, title, y_label, y_lim, chartData){
-  y_axes_ticks = { min: 0, max: y_lim };
+  const y_axes_ticks = { min: 0, max: y_lim };
   if (y_lim > 35) {
     y_axes_ticks['autoSkip'] = true;
   } else {
