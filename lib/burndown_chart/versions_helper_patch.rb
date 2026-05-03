@@ -9,6 +9,10 @@ module BurndownChart
     end
 
     module InstanceMethods
+      def redmine6_chart_available?
+        Rails.application.respond_to?(:assets) && Rails.application.assets.resolver.resolve('chart.min.js').present?
+      end
+
       def issues_burndown_chart_data(version)
         return nil if version.visible_fixed_issues.empty?
 
